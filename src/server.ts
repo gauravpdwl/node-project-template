@@ -3,3 +3,4 @@ function print(val: string): string {
 }
 
 console.log(print("Gaurav"));
+// lint staged test
