@@ -1,15 +1,18 @@
 import app from "./app";
 import { Config } from "./config";
+import logger from "./config/logger";
 
 const startServer = async () => {
   const PORT = Config.PORT;
 
   try {
+    // throw new Error("something went wrong");
     app.listen(PORT, () => {
-      console.log("Application running on Port " + PORT);
+      logger.info(`Listening on port ${PORT}`);
     });
-  } catch (err) {
-    console.log("Error - ", err);
+  } catch (error) {
+    logger.error(`${error}`);
+    // process.exit(1);
   }
 };
 
