@@ -1,6 +1,12 @@
-function print(val: string): string {
-  return "Hello " + val;
-}
+// import {config} from 'dotenv';
 
-console.log(print("Gaurav"));
+import { Config } from "./config";
+
+// config()
+
+// function print(val: string): string {
+//   return "Hello " + val;
+// }
+
+console.log("Hello " + Config.PORT);
 // lint staged test
