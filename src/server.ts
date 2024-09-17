@@ -1,12 +1,16 @@
-// import {config} from 'dotenv';
-
+import app from "./app";
 import { Config } from "./config";
 
-// config()
+const startServer = async () => {
+  const PORT = Config.PORT;
 
-// function print(val: string): string {
-//   return "Hello " + val;
-// }
+  try {
+    app.listen(PORT, () => {
+      console.log("Application running on Port " + PORT);
+    });
+  } catch (err) {
+    console.log("Error - ", err);
+  }
+};
 
-console.log("Hello " + Config.PORT);
-// lint staged test
+startServer();
