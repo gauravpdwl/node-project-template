@@ -1,13 +1,17 @@
 import express, { NextFunction, Request, Response } from "express";
 import logger from "./config/logger";
-import createHttpError, { HttpError } from "http-errors";
+import { HttpError } from "http-errors";
 
 const app = express();
 
-app.get("/", async (req, res, next) => {
-  const err = createHttpError(401, "You are not allowed to access");
-  return next(err);
-  res.send("Welcome to Workquest Auth Service");
+// app.get("/", async (req, res, next) => {
+//   const err = createHttpError(401, "You are not allowed to access");
+//   return next(err);
+//   res.send("Welcome to Workquest Auth Service");
+// });
+
+app.get("/", (req, res) => {
+  res.send("Welcome to WorkQuest Auth Service");
 });
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
